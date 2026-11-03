@@ -22,8 +22,9 @@ LL_TYPE_INSTANCE_HOOK(
     auto& player = *thisFor<Player>();
 
     // _blockUsingShield was inlined into Player::_hurt. This is its original guard.
-    auto const shieldBlockSucceeded = player.isDamageBlocked(source) && !player.getCurrentActiveShield().isNull();
-    if (shieldBlockSucceeded) {
+    // 26.60 移除了 Player::getCurrentActiveShield()，其替代 getActiveShieldSlot() 的返回类型
+    // (Bedrock::SmallOptional) 尚未导出，故仅以 isDamageBlocked 作为格挡判定。
+    if (player.isDamageBlocked(source)) {
         handler::onPlayerBlockUsingShield(&player, damage);
     }
 

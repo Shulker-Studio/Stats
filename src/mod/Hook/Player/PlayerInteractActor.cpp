@@ -64,6 +64,8 @@ bool consumePendingFishCatch(ActorUniqueID uniqueId) {
 }
 
 Player* resolveLoveCausePlayer(ActorUniqueID const& loveCause) {
+    // TODO: 26.60 将 ActorUniqueID::INVALID_ID 标记为 MCNAPI（不可用），
+    // 已申请确认：https://github.com/LiteLDev/mcapi-requests/issues/279
     if (loveCause == ActorUniqueID::INVALID_ID()) return nullptr;
 
     auto* level = ll::service::getLevel().as_ptr();
@@ -77,11 +79,12 @@ LL_TYPE_INSTANCE_HOOK(
     &Player::interact,
     ::InteractionResult,
     Actor&      actor,
-    Vec3 const& location
+    Vec3 const& location,
+    ::HandSlot  handSlot
 ) {
     auto uniqueId = actor.getOrCreateUniqueID();
     auto uuid     = getUuid();
-    auto r        = origin(actor, location);
+    auto r        = origin(actor, location, handSlot);
     if (!r.mSuccess) return r; // 后续可能还需要修改
     if (actor.hasCategory(::ActorCategory::WaterAnimal) || actor.isType(::ActorType::Axolotl)) {
         if (consumePendingFishCatch(uniqueId)) {
