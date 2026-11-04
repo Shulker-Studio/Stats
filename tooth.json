@@ -30,7 +30,7 @@
                         {
                             "type": "dir",
                             "src": "LK-Stats/",
-                            "dest": "plugins/LK-Stats/"
+                            "dest": "mods/LK-Stats/"
                         }
                     ]
                 }
