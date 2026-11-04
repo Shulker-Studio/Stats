@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### 更改
 
-- 盾牌格挡统计改用 `Player::isDamageBlocked` 判定，适配 26.60 移除的 `getCurrentActiveShield`。
+- 盾牌格挡统计改为以 `Player::_hurt` 的返回值判定是否真正挡下（`isDamageBlocked` 仅作预判），适配 26.60 移除的 `getCurrentActiveShield`。
 
 ## [0.12.0] - 2026-09-23
 
