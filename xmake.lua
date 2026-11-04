@@ -11,11 +11,10 @@ option_end()
 -- add_requires("levilamina x.x.x") for a specific version
 -- add_requires("levilamina develop") to use develop version
 -- please note that you should add bdslibrary yourself if using dev version
--- 26.60 尚未发布正式版本，暂固定到 develop 提交 78114bbf；正式版发布后改回 "levilamina 26.60.*"
-add_requires("levilamina 78114bbf2d6bb15be8ce372c8dc80e6100484a9d", {configs = {target_type = get_config("target_type")}})
+add_requires("levilamina 26.60.*", {configs = {target_type = get_config("target_type")}})
 
 add_requires("levibuildscript")
-add_requires("legacyremotecall v0.22.0", {configs = {target_type = get_config("target_type")}})
+add_requires("legacyremotecall v0.23.0", {configs = {target_type = get_config("target_type")}})
 add_requires("nlohmann_json v3.11.3")
 add_requires("parallel-hashmap v2.0.0")
 

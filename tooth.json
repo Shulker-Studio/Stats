@@ -2,7 +2,7 @@
     "format_version": 3,
     "format_uuid": "289f771f-2c9a-4d73-9f3f-8492495a924d",
     "tooth": "github.com/LeafKnife/Stats",
-    "version": "0.12.0",
+    "version": "0.13.0",
     "info": {
         "name": "Stats",
         "description": "Minecraft 基岩版服务器(BDS) 统计信息插件",
@@ -18,7 +18,7 @@
             "platform": "win-x64",
             "dependencies": {
                 "github.com/LiteLDev/LeviLamina": "26.60.*",
-                "github.com/LiteLDev/LegacyRemoteCall": "0.22.*"
+                "github.com/LiteLDev/LegacyRemoteCall": "0.23.*"
             },
             "assets": [
                 {
