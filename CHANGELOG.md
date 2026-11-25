@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.13.1] - 2026-11-25
+
+### 更改
+
+- 发布元数据从 `tooth.json` 迁移至 `lip.toml`，并将包 ID 迁移至 `github.com/Shulker-Studio/Stats`。
+- 打包后的 `manifest.json` 版本号包含发布版本、短提交哈希和 UTC 构建时间。
+- 修改 `lip.toml` 时触发构建工作流。
+
 ## [0.13.0] - 2026-11-04
 
 ### 新增
@@ -282,33 +290,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 统计玩家与床交互次数
 - 统计玩家与部分方块交互次数
 
-[未发布]: https://github.com/LeafKnife/Stats/compare/v0.13.0...dev
-[0.13.0]: https://github.com/LeafKnife/Stats/compare/v0.12.0...v0.13.0
-[0.12.0]: https://github.com/LeafKnife/Stats/compare/v0.11.0...v0.12.0
-[0.11.0]: https://github.com/LeafKnife/Stats/compare/v0.10.1...v0.11.0
-[0.10.1]: https://github.com/LeafKnife/Stats/compare/v0.10.0...v0.10.1
-[0.10.0]: https://github.com/LeafKnife/Stats/compare/v0.9.0...v0.10.0
-[0.9.0]: https://github.com/LeafKnife/Stats/compare/v0.8.3...v0.9.0
-[0.8.3]: https://github.com/LeafKnife/Stats/compare/v0.8.0...v0.8.3
-[0.8.0]: https://github.com/LeafKnife/Stats/compare/v0.7.1...v0.8.0
-[0.7.1]: https://github.com/LeafKnife/Stats/compare/v0.7.0...v0.7.1
-[0.7.0]: https://github.com/LeafKnife/Stats/compare/v0.6.0...v0.7.0
-[0.6.0]: https://github.com/LeafKnife/Stats/compare/v0.5.0...v0.6.0
-[0.5.0]: https://github.com/LeafKnife/Stats/compare/v0.4.0...v0.5.0
-[0.4.0]: https://github.com/LeafKnife/Stats/compare/v0.3.1...v0.4.0
-[0.3.1]: https://github.com/LeafKnife/Stats/compare/v0.3.0...v0.3.1
-[0.3.0]: https://github.com/LeafKnife/Stats/compare/v0.2.6...v0.3.0
-[0.2.6]: https://github.com/LeafKnife/Stats/compare/v0.2.5...v0.2.6
-[0.2.5]: https://github.com/LeafKnife/Stats/compare/v0.2.4...v0.2.5
-[0.2.4]: https://github.com/LeafKnife/Stats/compare/v0.2.3...v0.2.4
-[0.2.3]: https://github.com/LeafKnife/Stats/compare/v0.2.2...v0.2.3
-[0.2.2]: https://github.com/LeafKnife/Stats/compare/v0.2.1...v0.2.2
-[0.2.1]: https://github.com/LeafKnife/Stats/compare/v0.1.12...v0.2.1
-[0.1.12]: https://github.com/LeafKnife/Stats/compare/v0.1.9...v0.1.12
-[0.1.9]: https://github.com/LeafKnife/Stats/compare/v0.1.7...v0.1.9
-[0.1.7]: https://github.com/LeafKnife/Stats/compare/v0.1.5...v0.1.7
-[0.1.5]: https://github.com/LeafKnife/Stats/compare/v0.1.4...v0.1.5
-[0.1.4]: https://github.com/LeafKnife/Stats/compare/v0.1.3...v0.1.4
-[0.1.3]: https://github.com/LeafKnife/Stats/compare/v0.1.2...v0.1.3
-[0.1.2]: https://github.com/LeafKnife/Stats/compare/v0.1.1...v0.1.2
-[0.1.1]: https://github.com/LeafKnife/Stats/releases/tag/v0.1.1
+[未发布]: https://github.com/Shulker-Studio/Stats/compare/v0.13.1...dev
+[0.13.1]: https://github.com/Shulker-Studio/Stats/compare/v0.13.0...v0.13.1
+[0.13.0]: https://github.com/Shulker-Studio/Stats/compare/v0.12.0...v0.13.0
+[0.12.0]: https://github.com/Shulker-Studio/Stats/compare/v0.11.0...v0.12.0
+[0.11.0]: https://github.com/Shulker-Studio/Stats/compare/v0.10.1...v0.11.0
+[0.10.1]: https://github.com/Shulker-Studio/Stats/compare/v0.10.0...v0.10.1
+[0.10.0]: https://github.com/Shulker-Studio/Stats/compare/v0.9.0...v0.10.0
+[0.9.0]: https://github.com/Shulker-Studio/Stats/compare/v0.8.3...v0.9.0
+[0.8.3]: https://github.com/Shulker-Studio/Stats/compare/v0.8.0...v0.8.3
+[0.8.0]: https://github.com/Shulker-Studio/Stats/compare/v0.7.1...v0.8.0
+[0.7.1]: https://github.com/Shulker-Studio/Stats/compare/v0.7.0...v0.7.1
+[0.7.0]: https://github.com/Shulker-Studio/Stats/compare/v0.6.0...v0.7.0
+[0.6.0]: https://github.com/Shulker-Studio/Stats/compare/v0.5.0...v0.6.0
+[0.5.0]: https://github.com/Shulker-Studio/Stats/compare/v0.4.0...v0.5.0
+[0.4.0]: https://github.com/Shulker-Studio/Stats/compare/v0.3.1...v0.4.0
+[0.3.1]: https://github.com/Shulker-Studio/Stats/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/Shulker-Studio/Stats/compare/v0.2.6...v0.3.0
+[0.2.6]: https://github.com/Shulker-Studio/Stats/compare/v0.2.5...v0.2.6
+[0.2.5]: https://github.com/Shulker-Studio/Stats/compare/v0.2.4...v0.2.5
+[0.2.4]: https://github.com/Shulker-Studio/Stats/compare/v0.2.3...v0.2.4
+[0.2.3]: https://github.com/Shulker-Studio/Stats/compare/v0.2.2...v0.2.3
+[0.2.2]: https://github.com/Shulker-Studio/Stats/compare/v0.2.1...v0.2.2
+[0.2.1]: https://github.com/Shulker-Studio/Stats/compare/v0.1.12...v0.2.1
+[0.1.12]: https://github.com/Shulker-Studio/Stats/compare/v0.1.9...v0.1.12
+[0.1.9]: https://github.com/Shulker-Studio/Stats/compare/v0.1.7...v0.1.9
+[0.1.7]: https://github.com/Shulker-Studio/Stats/compare/v0.1.5...v0.1.7
+[0.1.5]: https://github.com/Shulker-Studio/Stats/compare/v0.1.4...v0.1.5
+[0.1.4]: https://github.com/Shulker-Studio/Stats/compare/v0.1.3...v0.1.4
+[0.1.3]: https://github.com/Shulker-Studio/Stats/compare/v0.1.2...v0.1.3
+[0.1.2]: https://github.com/Shulker-Studio/Stats/compare/v0.1.1...v0.1.2
+[0.1.1]: https://github.com/Shulker-Studio/Stats/releases/tag/v0.1.1

@@ -71,22 +71,25 @@ target("LK-Stats") -- Change this to your mod name.
     --  add_files("src-client/**.cpp")
     end
     on_load(function (target)
-        import("core.base.json")
-        local modVersionString = json.loadfile("tooth.json")["version"]
+        local lipToml = io.readfile("lip.toml")
+        local modVersionString = lipToml:match("\nversion%s*=%s*\"([^\"]+)\"")
+        if not modVersionString then raise("lip.toml must define a root version") end
         local modVersionMajor, modVersionMinor, modVersionPatch =
             modVersionString:match("^(%d+)%.(%d+)%.(%d+)$")
-        if not modVersionMajor then raise("tooth.json version must use major.minor.patch format") end
+        if not modVersionMajor then raise("lip.toml version must use major.minor.patch format") end
 
         local hash = os.iorun("git rev-parse --short HEAD"):gsub("\n", "")
-        local versionStr = modVersionString .. "+" .. hash
+        local resourceVersionStr = modVersionString .. "+" .. hash
+        local buildTime = os.date("!%Y%m%dT%H%M%SZ")
+        local manifestVersionStr = resourceVersionStr .. "." .. buildTime
         target:set("version", modVersionString)
         target:set("configvar", "LK_STATS_VERSION_MAJOR", modVersionMajor)
         target:set("configvar", "LK_STATS_VERSION_MINOR", modVersionMinor)
         target:set("configvar", "LK_STATS_VERSION_PATCH", modVersionPatch)
-        target:set("configvar", "LK_STATS_VERSION_STRING", versionStr)
+        target:set("configvar", "LK_STATS_VERSION_STRING", resourceVersionStr)
 
         target:add("rules", "@levibuildscript/modpacker",{
-               modVersion = versionStr
+               modVersion = manifestVersionStr
            })
     end)
 

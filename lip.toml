@@ -1,0 +1,22 @@
+format = 4
+id = "github.com/Shulker-Studio/Stats"
+version = "0.13.1"
+
+[info]
+name = "Stats"
+description = "Minecraft 基岩版服务器(BDS) 统计信息插件"
+tags = ["utility", "statistics"]
+logo = "https://github.com/Shulker-Studio/Stats/raw/main/logo.png"
+
+[[variants.""]]
+side = "server"
+platform = "win-x64"
+
+[variants."".deps]
+"github.com/LiteLDev/LeviLamina" = "26.60.*"
+"github.com/LiteLDev/LegacyRemoteCall" = "0.23.*"
+
+[[variants."".assets]]
+type = "zip"
+urls = ["https://{{id}}/releases/download/v{{version}}/Stats-server-windows-x64.zip"]
+place = [{ src = "LK-Stats/", dest = "mods/LK-Stats/" }]
