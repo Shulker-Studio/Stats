@@ -74,6 +74,8 @@ void onPlayerTakenDamage(Player* player, float finalDamage) {
     if (!playerStats) return;
 
     auto  health              = positiveFinite(player->getHealth());
+    // TODO: 26.60 将 SharedAttributes::ABSORPTION 标记为 MCNAPI（不可用），
+    // 已申请确认：https://github.com/LiteLDev/mcapi-requests/issues/279
     auto  absorptionAttribute = player->getAttribute(SharedAttributes::ABSORPTION());
     auto  absorption          = absorptionAttribute.mPtr ? positiveFinite(absorptionAttribute.mPtr->mCurrentValue) : 0.0f;
     float damageTaken     = positiveFinite(finalDamage);
@@ -94,6 +96,7 @@ void onPlayerDealtDamage(Mob* mob, Player* player, float finalDamage) {
     if (!playerStats) return;
 
     auto  health              = positiveFinite(mob->getHealth());
+    // TODO: 同上，26.60 的 SharedAttributes::ABSORPTION 为 MCNAPI，见 mcapi-requests#279。
     auto  absorptionAttribute = mob->getAttribute(SharedAttributes::ABSORPTION());
     auto  absorption          = absorptionAttribute.mPtr ? positiveFinite(absorptionAttribute.mPtr->mCurrentValue) : 0.0f;
     float damageTaken     = positiveFinite(finalDamage);

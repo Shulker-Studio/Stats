@@ -19,7 +19,7 @@ lip install github.com/LeafKnife/Stats
 
 1. 从[发布页面](https://github.com/LeafKnife/Stats/releases)下载最新版本。
 2. 解压`Stats-windows-x64.zip`文件。
-3. 将`LK-Stats`文件夹复制到 BDS 安装目录下的 plugins 文件夹中。
+3. 将`LK-Stats`文件夹复制到 BDS 安装目录下的 mods 文件夹中。
 
 ## 使用
 

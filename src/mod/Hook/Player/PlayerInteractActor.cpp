@@ -11,8 +11,8 @@
 #include <mc/world/actor/player/Player.h>
 #include <mc/world/gamemode/InteractionResult.h>
 #include <mc/world/item/BucketItem.h>
-#include <mc/world/level/Level.h>
 #include <mc/world/level/BlockPos.h>
+#include <mc/world/level/Level.h>
 
 
 #include "mod/Stats/Handlers/PlayerStatsHandlers.h"
@@ -64,6 +64,8 @@ bool consumePendingFishCatch(ActorUniqueID uniqueId) {
 }
 
 Player* resolveLoveCausePlayer(ActorUniqueID const& loveCause) {
+    // TODO: 26.60 将 ActorUniqueID::INVALID_ID 标记为 MCNAPI（不可用），
+    // 已申请确认：https://github.com/LiteLDev/mcapi-requests/issues/279
     if (loveCause == ActorUniqueID::INVALID_ID()) return nullptr;
 
     auto* level = ll::service::getLevel().as_ptr();
@@ -77,12 +79,13 @@ LL_TYPE_INSTANCE_HOOK(
     &Player::interact,
     ::InteractionResult,
     Actor&      actor,
-    Vec3 const& location
+    Vec3 const& location,
+    ::HandSlot  handSlot
 ) {
     auto uniqueId = actor.getOrCreateUniqueID();
     auto uuid     = getUuid();
-    auto r        = origin(actor, location);
-    if (!r.mSuccess) return r; //后续可能还需要修改
+    auto r        = origin(actor, location, handSlot);
+    if (!r.mSuccess) return r; // 后续可能还需要修改
     if (actor.hasCategory(::ActorCategory::WaterAnimal) || actor.isType(::ActorType::Axolotl)) {
         if (consumePendingFishCatch(uniqueId)) {
             handler::onPlayerFishCaught(uuid);
@@ -121,13 +124,14 @@ LL_TYPE_INSTANCE_HOOK(
     ::Actor&      entity,
     ::BlockPos    pos,
     uchar         face,
+    ::HandSlot    handSlot,
     ::Vec3 const& clickPos
 ) {
     auto typeId  = static_cast<int>(entity.getEntityTypeId());
     auto canFill = (typeId >= 9068 && typeId <= 9072) || typeId == 4994 || typeId == 9093;
-    if (!canFill) return origin(instance, entity, pos, face, clickPos);
+    if (!canFill) return origin(instance, entity, pos, face, handSlot, clickPos);
     auto uniqueId = entity.getOrCreateUniqueID();
-    auto r        = origin(instance, entity, pos, face, clickPos);
+    auto r        = origin(instance, entity, pos, face, handSlot, clickPos);
     if (r.mSwing) {
         rememberPendingFishCatch(uniqueId);
     }

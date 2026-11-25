@@ -5,7 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [未发布]
+## [0.13.0] - 2026-11-04
+
+### 新增
+
+- 适配 LeviLamina 26.60
+
+### 更改
+
+- 盾牌格挡统计改为以 `Player::_hurt` 的返回值判定是否真正挡下（`isDamageBlocked` 仅作预判），适配 26.60 移除的 `getCurrentActiveShield`。
+- LeviLamina 依赖改用 26.60 正式版，LegacyRemoteCall 升级到 0.23.0。
+
+## [0.12.0] - 2026-09-23
+
+### 新增
+
+- 适配 LeviLamina 26.51
 
 ## [0.11.0] - 2026-09-16
 
@@ -267,7 +282,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - 统计玩家与床交互次数
 - 统计玩家与部分方块交互次数
 
-[未发布]: https://github.com/LeafKnife/Stats/compare/v0.11.0...dev
+[未发布]: https://github.com/LeafKnife/Stats/compare/v0.13.0...dev
+[0.13.0]: https://github.com/LeafKnife/Stats/compare/v0.12.0...v0.13.0
+[0.12.0]: https://github.com/LeafKnife/Stats/compare/v0.11.0...v0.12.0
 [0.11.0]: https://github.com/LeafKnife/Stats/compare/v0.10.1...v0.11.0
 [0.10.1]: https://github.com/LeafKnife/Stats/compare/v0.10.0...v0.10.1
 [0.10.0]: https://github.com/LeafKnife/Stats/compare/v0.9.0...v0.10.0
