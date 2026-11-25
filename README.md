@@ -1,9 +1,9 @@
 # LK-Stats
 
-![GitHub Tag](https://img.shields.io/github/v/tag/LeafKnife/Stats?include_prereleases&style=for-the-badge)
-![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/LeafKnife/Stats/total?style=for-the-badge)
+![GitHub Tag](https://img.shields.io/github/v/tag/Shulker-Studio/Stats?include_prereleases&style=for-the-badge)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Shulker-Studio/Stats/total?style=for-the-badge)
 
-<!-- ![GitHub License](https://img.shields.io/github/license/LeafKnife/Stats?style=for-the-badge) -->
+<!-- ![GitHub License](https://img.shields.io/github/license/Shulker-Studio/Stats?style=for-the-badge) -->
 
 Minecraft 基岩版服务器(BDS) 统计信息插件
 
@@ -12,12 +12,12 @@ Minecraft 基岩版服务器(BDS) 统计信息插件
 ### 使用 Lip
 
 ```sh
-lip install github.com/LeafKnife/Stats
+lip install github.com/Shulker-Studio/Stats
 ```
 
 ### 手动安装
 
-1. 从[发布页面](https://github.com/LeafKnife/Stats/releases)下载最新版本。
+1. 从[发布页面](https://github.com/Shulker-Studio/Stats/releases)下载最新版本。
 2. 解压`Stats-windows-x64.zip`文件。
 3. 将`LK-Stats`文件夹复制到 BDS 安装目录下的 mods 文件夹中。
 
@@ -213,7 +213,7 @@ const rank3 = getRankData(2,""); // 挖掘排行榜
 
 ## 贡献
 
-如果您有任何问题，请开启一个 [issue](https://github.com/LeafKnife/Stats/issues) 来讨论  
+如果您有任何问题，请开启一个 [issue](https://github.com/Shulker-Studio/Stats/issues) 来讨论
 欢迎 PR
 
 ## 许可

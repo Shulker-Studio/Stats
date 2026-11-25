@@ -314,6 +314,6 @@ void printLogo() {
     logger.info(R"(     ╚══════╝╚═╝  ╚═╝     ╚══════╝   ╚═╝   ╚═╝  ╚═╝   ╚═╝   ╚══════╝     )");
     logger.info(R"(                                                                         )");
     /// logger.info(R"(     ----------------   LeafKnife Statistics Plugin  ---------------     )");
-    logger.info("Repository: https://github.com/LeafKnife/Stats");
+    logger.info("Repository: https://github.com/Shulker-Studio/Stats");
 }
 } // namespace stats
